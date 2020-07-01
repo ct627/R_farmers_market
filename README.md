@@ -37,4 +37,4 @@ Confusion Matrix and Statistics.
                   Kappa : 0.7257    
                   
 ## Code
-Please see CODE.R for more Information.  
+Please see CODE.R for details.  
