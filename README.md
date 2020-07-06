@@ -37,4 +37,4 @@ Confusion Matrix and Statistics.
                   Kappa : 0.7257    
                   
 ## Code
-Please see CODE.R for details.  
+Please see [CODE.r](https://github.com/ct627/R_farmers_market/blob/master/CODE.r) for details.  
