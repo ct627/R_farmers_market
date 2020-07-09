@@ -36,6 +36,7 @@ fmNB <- farmsmarket %>% select
 MarketName,State,Credit,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Honey,
 Jams,Maple,Meat,Nursery,Nuts,Plants,Poultry,Prepared,Soap,Trees,Wine,Coffee,Beans,Fruits,Grains,Juices,Mushrooms,PetFood,Tofu,WildHarvested
 )
+
 ### Split data
 n <- nrow(fmNB)
 idxtrain <- sample.int(n, size = round(0.25 * n))
@@ -48,25 +49,38 @@ fmNB_test <- fmNB[idxtrain, -c(1:2)]
 test_label = as.factor(fmNB_test$Credit)
 fmNB_test <- fmNB_test[,-1]
 nrow(fmNB_test)
+
 ### Check dimensions of the split
 prop.table(table(fmNB$Credit)) * 100
 prop.table(table(fmNB_train$Credit)) * 100
 prop.table(table(test_label)) * 100
+
 ### builing model
 model = naiveBayes(x,train_label)
 model
+
 ### Predict testing set
 test_pred <- predict(model, fmNB_test)
 head(test_pred)
 head(test_label)
+
 ### Model Accuracy
 CrossTable(test_pred, test_label,
 prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE, dnn = c('predicted', 'actual'))
 confusionMatrix(test_pred, test_label)
 ```
 
-## 
+## Random Forest Classification
 ```
+fmrf <- farmsmarket %>% select(Credit,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Honey,Jams,Maple,Meat,Nursery,Nuts,Plants,Poultry,Prepared,Soap,Trees,Wine,Coffee,Beans,Fruits,Grains,Juices,Mushrooms,PetFood,Tofu,WildHarvested) %>% mutate_if(is.character,as.factor)
+str(fmrf)
+idxtrain <- sample.int(n, size = round(0.25 * n))
+fmrf_train <- fmrf[-idxtrain, ]
+fmrf_test <- fmrf[idxtrain, ]
 
+#build model
+rf <- randomForest(Credit ~ ., data = fmrf_train)
+credit_pred <- predict(rf, fmrf_test)
+confusionMatrix(data=credit_pred, fmrf_test$Credit)
 ```
 
