@@ -5,6 +5,7 @@ This repository contains data visualization and machine learning algorithms usin
 ## Purpose  
 1. Try to practice one visualization package in R (statebins).  
 2. Try to practice Naive Bayes and RandomForest Classifier methods for Discrete Predictors.  
+3. Use classifier methods to see is there any relation between factors and credit card or cash. Try to answer a question that will different categories of products in a farmers market affect the usage of credit card or cash?
 
 ## Data Source   
 Data download from [Data.gov](https://catalog.data.gov/dataset/farmers-markets).   
