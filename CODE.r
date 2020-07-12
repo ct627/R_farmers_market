@@ -30,6 +30,8 @@ farmsmarket1 %>% filter(State =="New York") %>% select(MarketName,street)
 ```
 
 ## Naive Bayes Classifier
+### Select product category variables such as Organic, Baked goods, Cheese and so on 
+### to see the two groups which are Y and N in credit variable stands for the market can use credit card or not.
 ```
 fmNB <- farmsmarket %>% select
 (
