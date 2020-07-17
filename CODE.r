@@ -74,7 +74,9 @@ confusionMatrix(test_pred, test_label)
 
 ## Random Forest Classification
 ```
-fmrf <- farmsmarket %>% select(Credit,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Honey,Jams,Maple,Meat,Nursery,Nuts,Plants,Poultry,Prepared,Soap,Trees,Wine,Coffee,Beans,Fruits,Grains,Juices,Mushrooms,PetFood,Tofu,WildHarvested) %>% mutate_if(is.character,as.factor)
+fmrf <- farmsmarket %>% select(Credit,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Honey,Jams,Maple,Meat,Nursery,Nuts,
+                               Plants,Poultry,Prepared,Soap,Trees,Wine,Coffee,Beans,Fruits,Grains,Juices,Mushrooms,PetFood,Tofu,WildHarvested)
+                    %>% mutate_if(is.character,as.factor)
 str(fmrf)
 idxtrain <- sample.int(n, size = round(0.25 * n))
 fmrf_train <- fmrf[-idxtrain, ]
