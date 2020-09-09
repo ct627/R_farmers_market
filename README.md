@@ -8,8 +8,7 @@ This repository contains data visualization and machine learning algorithms usin
 3. Use classifier methods to see is there any relation between factors and credit card or cash. Try to answer a question that will different categories of products in a farmers market affect the usage of credit card or cash?
 
 ## Data Source   
-Data download from [Data.gov](https://catalog.data.gov/dataset/farmers-markets).   
-Publisher by data.ct.gov.  
+Data download from [Data.gov](https://catalog.data.gov/dataset/farmers-markets). Publisher by data.ct.gov.  
 Other information please visit [Data.gov](https://www.data.gov).   
 
 ## Result (statebins plot)
